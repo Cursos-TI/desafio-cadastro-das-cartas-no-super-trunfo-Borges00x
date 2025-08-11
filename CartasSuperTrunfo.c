@@ -64,10 +64,10 @@ int main () {
 
     densidade = populacao / area;
 
-    pibPerCapita = (pib * 1000000000) / populacao;
+    pibPerCapita = (pib * 1000000000.0F) / populacao;
 
     superpoder = (float)populacao + area + pib +
-    (float)pontosturisticos + pibPerCapita + (1.0/densidade2);
+    (float)pontosturisticos + pibPerCapita + (1.0/densidade);
 
     // Aqui as váriaveis recebem os valores da segunda carta
 
@@ -86,7 +86,7 @@ int main () {
     cidade2[strcspn(cidade2, "\n")] = 0;
 
     printf("Digite o número da população da cidade: \n ");
-    scanf("%d", &populacao2);
+    scanf("%lu", &populacao2);
 
     printf("Digite a área da cidade em quilômetros quadrados: \n ");
     scanf("%f", &area2);
@@ -101,7 +101,7 @@ int main () {
 
     densidade2 = populacao2 / area2;
 
-    pibPerCapita2 = (pib2 * 1000000000) / populacao2;
+    pibPerCapita2 = (pib2 * 1000000000.0F) / populacao2;
 
     superpoder2 = (float)populacao2 + area2 + pib2 +
     (float)pontosturisticos2 + pibPerCapita2 + (1.0/densidade2);
@@ -128,7 +128,7 @@ int main () {
 
     printf("Nome da Cidade: %s\n", cidade);
 
-    printf("População: %d\n", populacao);
+    printf("População: %lu\n", populacao);
 
     printf("Área: %.2f Km²\n", area);
 
@@ -154,7 +154,7 @@ int main () {
 
     printf("Nome da Cidade: %s\n", cidade2);
 
-    printf("População: %d\n", populacao2);
+    printf("População: %lu\n", populacao2);
 
     printf("Área: %.2f Km²\n", area2);
 
@@ -182,7 +182,7 @@ int main () {
 
     printf("Pontos Turísticos: Carta %d venceu (%d) \n", (carta - turisticosresult), turisticosresult);
 
-    printf("Densidade Populacional: Carta %d venceu (%d) \n", (carta - densidaderesult), densidaderesult);
+    printf("Densidade Populacional (O menor vence): Carta %d venceu (%d) \n", (carta - densidaderesult), densidaderesult);
 
     printf("PIB per Capita: Carta %d venceu (%d) \n", (carta - pibperresult), pibperresult);
 
